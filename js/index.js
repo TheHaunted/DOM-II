@@ -53,3 +53,9 @@ page.addEventListener('wheel', () => {
     page.style.background = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
 });
 
+let navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+    });
+});
