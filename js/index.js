@@ -7,12 +7,16 @@ destination.forEach(function(item){
     item.addEventListener('mouseout', () => {
         item.style.background = 'white';
     });
+    item.addEventListener('click', () => {
+        item.style.color = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    })
 });
 
 let button = document.querySelectorAll('.btn');
 button.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', event => {
         button.textContent = 'Clicked!'
+        event.stopPropagation();
     });
 });
 
